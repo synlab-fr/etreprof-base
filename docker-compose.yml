@@ -1,0 +1,34 @@
+version: '3.3'
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    container_name: "etreprof-db"
+    environment:
+      MYSQL_DATABASE: 'Etreprof_DB'
+      MYSQL_ROOT_PASSWORD: 'root'
+    ports:
+      - '3306:3306'
+    volumes:
+      - ~/mysql_data:/var/lib/mysql
+    networks:
+      - etreprof_network
+
+  backend:
+    container_name: etreprof-backend
+    build:
+      context: ./etreprof-backend
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+       - ./etreprof-backend:/app
+    depends_on:
+      - db
+    networks:
+      - etreprof_network
+
+networks:
+  etreprof_network:
+    driver: bridge

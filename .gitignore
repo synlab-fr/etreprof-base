@@ -1,0 +1,12 @@
+src/**/*.js
+src/**/*.js.map
+node_modules/
+temp/
+database.sqlite
+ormconfig.json
+.idea
+config.json
+.DS_Store
+build
+.vscode/
+.history
