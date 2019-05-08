@@ -3,4 +3,4 @@
 	url = git@github.com:synlab-fr/etreprof-backend.git
 [submodule "etreprof-frontend"]
 	path = etreprof-frontend
-	url = https://github.com/synlab-fr/etreprof-frontend.git
+	url = git@github.com:synlab-fr/etreprof-frontend.git
